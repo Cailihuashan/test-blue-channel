@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 enum State { FLYING, WALKING }
 var current_state = State.FLYING
+var has_key = false
 
 @export var SPEED = 10
 @export var ACCEL = 10.0

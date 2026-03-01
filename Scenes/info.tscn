@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3qrhl4n5dubp"]
+
+[ext_resource type="Script" uid="uid://c1rtainjews4t" path="res://Scenes/info.gd" id="1_ugdrp"]
+[ext_resource type="FontFile" uid="uid://bkwk51cdu0f7y" path="res://real assets/buttons/Jost-VariableFont_wght.ttf" id="2_qjrxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahul7"]
+bg_color = Color(0.32764524, 0.60726255, 0.9532594, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjprj"]
+bg_color = Color(0.60474855, 0.5986932, 0.59609246, 1)
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ugdrp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahul7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 589.0
+theme_override_fonts/font = ExtResource("2_qjrxf")
+theme_override_font_sizes/font_size = 18
+text = "The Blue Channel is less of a level and more of a glitchy, infinite void. Unlike the yellow-carpeted office hallways most people associate with the 
+Backrooms, this level is defined by a total lack of solid structure.
+
+Everything is a deep, glowing, neon-blue. There is no sun or light source; the air itself radiates color. 
+It feels like being underwater without the pressure or the need to hold your breath. You don't walk, but  swim or float through the blue expanse. 
+
+DANGERS: While you can float, if you lose your focus or sink too deep, you might fall into even more dangerous, darker voids. 
+There are \"scenes\" that floats in the area. While these buildings do look as though they exist, touching these structures negates the floating ability 
+that one would previously have. If one accidentally walks through these \"non-clippable matter\", they will fall out of the scene and be doomed to an 
+eternity of falling through countless Level clusters.
+
+
+W, A, S, D, Space for up, Shift for down. Collect the gold capsule almond water in the city and find the exit behind the city, survive it wanderer! 
+- M.E.G
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 523.0
+offset_right = 707.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = SubResource("StyleBoxFlat_wjprj")
+text = "Enter Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
