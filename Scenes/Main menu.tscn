@@ -1,40 +1,90 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsndpbehg71uw"]
+[gd_scene load_steps=5 format=3 uid="uid://bsndpbehg71uw"]
 
-[ext_resource type="Script" uid="uid://cvm2uapk27o0k" path="res://Scenes/main_menu.gd" id="1_ef4ur"]
+[ext_resource type="Script" uid="uid://cvm2uapk27o0k" path="res://scripts/main_menu.gd" id="1_ef4ur"]
+[ext_resource type="Texture2D" uid="uid://cpvvwcecalvuo" path="res://real assets/buttons/unfinishedarea.jpg" id="2_lw8vy"]
+[ext_resource type="FontFile" uid="uid://bkwk51cdu0f7y" path="res://real assets/buttons/Jost-VariableFont_wght.ttf" id="3_lmgbh"]
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rmhq"]
+texture = ExtResource("2_lw8vy")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ef4ur")
 
-[node name="Button Manager" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0rmhq")
 
-[node name="Start" type="Button" parent="Button Manager"]
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -51.5
+offset_right = 150.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_lmgbh")
+theme_override_font_sizes/font_size = 65
+text = "Start"
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -262.0
+offset_right = 154.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_lmgbh")
+theme_override_font_sizes/font_size = 55
+text = "Credits
+"
+
+[node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1292.0
-offset_top = 318.0
-offset_right = 2032.0
-offset_bottom = 643.0
-text = "Start Game"
+offset_left = 433.0
+offset_top = 502.0
+offset_right = 733.0
+offset_bottom = 605.0
+theme_override_fonts/font = ExtResource("3_lmgbh")
+theme_override_font_sizes/font_size = 65
+text = "Quit"
 
-[node name="Credits" type="Button" parent="Button Manager"]
-layout_mode = 0
-offset_left = 1288.0
-offset_top = 754.0
-offset_right = 2048.0
-offset_bottom = 1084.0
-text = "Credits"
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -572.0
+offset_right = 574.0
+offset_bottom = 207.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_lmgbh")
+theme_override_font_sizes/font_size = 70
+text = "Unnumbered level - The Blue Channel"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="Button Manager"]
-layout_mode = 0
-offset_left = 1282.0
-offset_top = 1196.0
-offset_right = 2036.0
-offset_bottom = 1516.0
-text = "Quit Game"
-
-[connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Button Manager/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

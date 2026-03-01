@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cqwjjqbdwbqt1"]
 
 [ext_resource type="PackedScene" uid="uid://okawqcb7mrd" path="res://assets/city_pack.glb" id="1_go701"]
-[ext_resource type="Script" uid="uid://drjrmfsvyr7vl" path="res://Player.gd" id="2_5a7ea"]
+[ext_resource type="Script" uid="uid://drjrmfsvyr7vl" path="res://scripts/Player.gd" id="2_5a7ea"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,6 +15,9 @@ background_mode = 2
 sky = SubResource("Sky_tlwt5")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.3024338, 0.56224734, 0.9880143, 1)
+fog_density = 0.0302
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.45490196, 0.5882353, 0.8862745, 1)
 

@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://tctc46sc87l4"]
+
+[ext_resource type="Script" uid="uid://djqm2a45kriij" path="res://scripts/credits.gd" id="1_r18jl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gryuy"]
+bg_color = Color(0.445395, 0.46728265, 0.4061131, 1)
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r18jl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "\"Unnumbered Level - \"The Blue Channel\"\" by Greggita Mahayfaio, from the Backrooms Wiki. 
+Source: https://backrooms-wiki.wikidot.com/blue-channel. Licensed under CC-BY-SA-3.0."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -103.0
+offset_right = 173.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_gryuy")
+text = "Return"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
