@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://btd021gb45uh2"]
+
+[ext_resource type="PackedScene" uid="uid://okawqcb7mrd" path="res://assets/city_pack.glb" id="1_r57si"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_r57si")]
+
+[node name="Material2" parent="Sketchfab_model/USDRoot/scene/Meshes/Sketchfab_model2/Collada_visual_scene_group/Material2_1" index="0"]
+layers = 2

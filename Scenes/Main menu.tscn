@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsndpbehg71uw"]
+
+[ext_resource type="Script" uid="uid://cvm2uapk27o0k" path="res://Scenes/main_menu.gd" id="1_ef4ur"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ef4ur")
+
+[node name="Button Manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Button Manager"]
+layout_mode = 0
+offset_left = 1292.0
+offset_top = 318.0
+offset_right = 2032.0
+offset_bottom = 643.0
+text = "Start Game"
+
+[node name="Credits" type="Button" parent="Button Manager"]
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 754.0
+offset_right = 2048.0
+offset_bottom = 1084.0
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Button Manager"]
+layout_mode = 0
+offset_left = 1282.0
+offset_top = 1196.0
+offset_right = 2036.0
+offset_bottom = 1516.0
+text = "Quit Game"
+
+[connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button Manager/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]
